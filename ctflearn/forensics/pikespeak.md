@@ -1,5 +1,5 @@
-Running the command
+Download the provided file "PikesPeak.jpg" and run the command
 ```bash
-file PikesPeak.jpg
+strings PikesPeak.jpg | grep CTFlearn
 ```
-reveals 11 comments that contain flags, of which only 1 is the correct one. The correct one is the flag with the most common prefix used.
+to get the flag.
