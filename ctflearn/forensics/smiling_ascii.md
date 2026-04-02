@@ -1,5 +1,5 @@
-Running the command
+Download the provided file "smiling.png" and run the command
 ```bash
-zsteg -a smiling.png
+zsteg -a smiling.png | grep CTF
 ```
-reveals the flag.
+to get the flag.
