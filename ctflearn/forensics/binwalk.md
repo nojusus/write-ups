@@ -1,5 +1,5 @@
-The command
+Download the provided file "PurpleThing.jpeg" and run the command
 ```bash
 foremost -i PurpleThing.jpeg
 ```
-extracts a folder with a hidden image that contains the flag.
+The extracted folder has an image with the flag.
