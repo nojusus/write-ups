@@ -1,9 +1,9 @@
-Running the command
+Download the provided file "Snowboard.jpg" and run the command
 ```bash
 file Snowboard.jpg
 ```
-reveals 2 comments, that contain a fake flag and a string that is encoded with base64. The string can be decoded with the command
+There are 2 comments. The first comment is a fake flag. The second one is an encoded string. Decode the string with the command
 ```bash
-echo "Q1RGbGVhcm57U2tpQmFuZmZ9Cg==" | base64 -d
+echo "YourStringHere" | base64 -d
 ```
-that reveals the real flag.
+to get the flag.
