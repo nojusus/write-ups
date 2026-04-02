@@ -1,4 +1,4 @@
-Download the provided "Computer-Password-Security-Hacker - Copy.jpg" file and run the command
+Download the provided file "Computer-Password-Security-Hacker - Copy.jpg" and run the command
 ```bash
 exiftool "Computer-Password-Security-Hacker - Copy.jpg" | grep flag
 ```
