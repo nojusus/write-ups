@@ -1,4 +1,4 @@
-Download the provided "Hey_You.png" file and run the command
+Download the provided file "Hey_You.png" and run the command
 ```bash
 binwalk Hey_You.png | grep https
 ```
