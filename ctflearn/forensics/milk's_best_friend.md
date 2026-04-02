@@ -1,13 +1,9 @@
-Checking the image for hidden files using
-```bash
-binwalk oreo.jpg
-```
-reveals that there are files to be extracted. Extracting with
+Download the provided file "oreo.jpg" and run the command
 ```bash
 binwalk -e oreo.jpg
 ```
-provides a second image that has the flag that can be found by running
+to extract a folder with a second image. Run the command
 ```bash
-strings b.jpg
+strings b.jpg | grep flag
 ```
-and scrolling to the bottom of the output.
+to get the flag.
