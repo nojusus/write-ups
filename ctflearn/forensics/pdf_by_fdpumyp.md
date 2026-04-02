@@ -1,9 +1,9 @@
-Running the command
+Download the provided file "dontopen.pdf" and run the command
 ```bash
-strings dontopen.pdf
+strings dontopen.pdf | grep external
 ```
-and looking at the bottom of the output, an encoded base64 string can be found and decoded using
+to get an encoded string. Decode it with the command
 ```bash
-echo "Q1RGbGVhcm57KV8xbDB3M3kwVW0wMG15MTIzfQ==" | base64 -d
+echo YourStringHere | base64 -d
 ```
-that reveals the flag.
+to get the flag.
