@@ -1,4 +1,4 @@
-Download the provided "data.pcap" file and run the command
+Download the provided file "data.pcap" and run the command
 ```bash
 wireshark data.pcap
 ```
