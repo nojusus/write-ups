@@ -1,24 +1,12 @@
-Running the command
-```bash
-file image.jpg
-```
-provides a base64 encoded string, that can be decoded with
-```bash
-echo "NjAweDYwMF9waWN0dXJl" | base64 -d
-```
-that provides a clue on how to obtain the flag. Running the command
-```bash
-binwalk image.jpg
-```
-shows that there are files hidden inside the image, and extracting them using
+Download the provided file "image.jpg" and run the command
 ```bash
 binwalk -e image.jpg
 ```
-acquires a zip file that requires a password to extract. The password can be found going back to the image and running the command
+to extract a hidden file "D0F0.zip". Go back to the first file and run the command
 ```bash
-strings image.jpg | grep -A 1 "pass"
+strings image.jpg | grep -A 1 pass
 ```
-The zip file extracts a "bin" file that contains a long line of binary numbers. This is where the clue found at the beginning comes into play, since the long string needs to be read like an image. A Python program is a good choice for this purpose.
+to get the password used to extract the found file. Convert the extracted file "bin" into a 600x600 grid with this Python program:
 ```python
 data = open('bin', 'rb').read()
 
@@ -30,4 +18,4 @@ with open('flag.txt', 'wb') as fd:
       fd.write(data[i+200:i+364])
       fd.write(b'\n')
 ```
-Running this command will produce the flag in text format that can be read like an image by zooming out.
+Open the exported file "flag.txt", zoom out, rotate it, and mirror it horizontally to get the flag.
