@@ -1,9 +1,9 @@
-Running the command
+Download the provided file "flag (4)" and run the command
 ```bash
-wireshark 'flag (4)'
+wireshark "flag (4)"
 ```
-will launch Wireshark where the packet can be analyzed. In the search field, filtering for "http.request.method" provides all HTTP frames, since they are most likely to contain information. The frame 247 contains an encoded message that can be decoded using
+Search for a filter "http" and find the frame 247. Copy the found encoded message and run the command
 ```bash
-echo "ZmxhZ3tBRmxhZ0luUENBUH0=" | base64 -d
+echo YourStringHere | base64 -d
 ```
-to produce the flag.
+to get the flag.
