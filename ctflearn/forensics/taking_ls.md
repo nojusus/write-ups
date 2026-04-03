@@ -2,7 +2,7 @@ Download the provided file "The Flag.zip" and extract it. Enter the extracted fo
 ```bash
 ls -la
 ```
-A hidden directory ".ThePassword" is revealed. Access it and run the same command again. You will find a "ThePassword.txt" file that can be read with the command
+A hidden directory ".ThePassword" is revealed. Access it and run the same command again. You will find a file "ThePassword.txt" that can be read with the command
 ```bash
 cat ThePassword.txt
 ```
