@@ -1,0 +1,1 @@
+Download the provided file "you_know_what_to_do.wav" and go to https://dtmf.netlify.app. Upload the downloaded file and decode it. Copy the decoded output and go to https://gchq.github.io/CyberChef. Paste the output into "Input" and split it into numbers that are within the printable ASCII range separated by space. Add the operation "From Decimal" to get the flag. 
