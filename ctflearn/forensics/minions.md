@@ -1,6 +1,6 @@
 Download the provided file "Hey_You.png" and run the command
 ```bash
-binwalk Hey_You.png | grep https
+strings Hey_You.png | grep https
 ```
 to get a download link for another image. Run the command
 ```bash
