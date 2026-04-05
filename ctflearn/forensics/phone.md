@@ -1,23 +1,4 @@
-The WAV file contains multiple tones which suggests Morse Code is not the answer. Try measuring the frequencies. A Python program is a good choice for this purpose.
-```python
-import wave
-import scipy.fft as fft
-import numpy as np
-
-with wave.open('phone.wav', 'rb') as w:
-  frames = w.readframes(w.getnframes())
-  sample_rate = w.getframerate()
-
-samples = np.frombuffer(frames, dtype=np.int16).astype(np.float32)
-spectrum = np.abs(fft.rfft(samples))
-frequencies = fft.rfftfreq(len(samples), 1/sample_rate)
-top_indices = np.argsort(spectrum)[-10:]
-top_frequencies = sorted(frequencies[top_indices])
-
-for f in top_frequencies:
-  print(f"{f:.1f} Hz")
-```
-The program reveals that these are the frequencies used by DTMF. The next step is to decode the frequencies into symbols. Once again, create a Python program to accomplish that.
+Download the provided file "phone.wav" and run this program:
 ```python
 import wave
 import numpy as np
@@ -77,11 +58,11 @@ digits = [sym for sym, dur in filtered if sym != '_']
 
 print(''.join(digits))
 ```
-Running this program now gives a long string that needs to be divided into parts. You can do so by splitting them with hashtag symbols. You should get 25 parts, each exactly 25 characters of 0s and 1s. That is a hint that a QR code must be rendered using the output, just don't forget to invert the polarity. Render the QR code using this program:
+Copy the printed string and paste it inside the "seq" variable in this program:
 ```python
 from PIL import Image
 
-seq = "9892730000000100110110010000000#0111110100011001010111110#0100010101000101110100010#0100010100110011110100010#0100010111101011010100010#0111110101110001010111110#0000000101010101010000000#1111111110100111011111111#0011000111110111011010000#1100001100001010010100110#1010100101101100111000111#0000001111010100001101001#1000010001000111000111000#0010001001101010100100000#1110100011000010111100011#1111111010011111101001010#0000110010011010000001010#1111111100000110011100110#0000000111100000010101011#0111110101001101011101011#0100010101111111000001001#0100010110100001000011100#0100010111001001001011001#0111110100011110010101001#0000000101111110100000000#476528"
+seq = ""
 
 sections = seq.split('#')
 header_bin = sections[0][6:]  # skip the 6-digit non-binary prefix
@@ -103,4 +84,4 @@ for r, row in enumerate(rows):
 
 img.save('qr.png')
 ```
-and scan the code to reveal the flag.
+Run the program and scan the QR code to get the flag.
