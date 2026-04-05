@@ -1,21 +1,17 @@
-Running the command
+Download the provided file "Begin Hack.jpg" and run the command
 ```bash
-strings "Begin Hack.jpg"
+strings "Begin Hack.jpg" | grep mega
 ```
-and scrolling to the middle of the output reveals a download link that leads to a zip file. Extract the file using
-```bash
-unzip "Up For A Little Challenge.zip"
-```
-Enter the extracted folder's directory using
-```bash
-cd "Did I Forget Again?"
-```
-and running the command
+to get a download link for another file. Extract the file, enter the folder's directory and run the command
 ```bash
 ls -la
 ```
-reveals a hidden file .Processing.cerb4. Run the command
+to find a hidden file ".Processing.cerb4". Run the command
 ```bash
 binwalk -e .Processing.cerb4
 ```
-to acquire a locked zip file. Go back to the first strings command, find the real_unlock_key line, remove the last U letter and use that as the password to unzip the file. The file extracts a skycoder.jpg file that contains the flag in the bottom right corner of the image.
+to get a locked file "0.zip". Go back to the first file and run the command
+```bash
+strings "Begin Hack.jpg" | grep key
+```
+Use the found string as the password to extract the file. Open the extracted file "skycoder.jpg" and look at the bottom right corner to get the flag.
