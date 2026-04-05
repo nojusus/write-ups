@@ -1,4 +1,4 @@
-Scanning the downloaded inception.png file's QR code, you get a hint that you need to look closer. Zooming into the image, you can find a lot of smaller QR codes inside the big one. Python is a good solution to avoid manually scanning each one. You can use this program.
+Download the provided file "inception.png". Scan the QR codes inside the image with this program:
 ```python
 import cv2
 import numpy as np
@@ -52,4 +52,4 @@ for r in range(modules):
 message = ''.join(t for _, _, t in chunks)
 print(message)
 ```
-Running this program will reveal a base64 encoded string. Use the site https://base64.guru/converter/decode/image/png to convert the string into a PNG file. The PNG file will be another QR code that you will need to scan to obtain the flag.
+The program outputs an encoded string. Go to https://base64.guru/converter/decode/image/png and convert the string into a "PNG" file. Scan the QR code to get the flag.
