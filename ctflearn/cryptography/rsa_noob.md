@@ -1,0 +1,1 @@
+Download the provided file "rsanoob (1).txt". Go to https://www.binaryhexconverter.com/decimal-to-hex-converter and convert the "c" decimal value to hex. Go to https://gchq.github.io/CyberChef, paste the hex value into "Input" and add an operation "From Hex" to get the flag.
