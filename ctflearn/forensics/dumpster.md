@@ -1,12 +1,8 @@
-Extract the downloaded zip file using
-```bash
-unzip dumpster.zip
-```
-The Decryptor.java file reveals that the flag is encrypted and requires a hash password to decrypt it. VisualVM is a good tool to dig through the heapdump.hprof file. Open it with
+Download the provided file "dumpster.zip", extract it and run the command
 ```bash
 visualvm
 ```
-Go to File > Load > Find your heapdump.hprof file and select it. Change the view from Summary to Threads and scroll to the bottom to find the Decryptor.main thread. Continue going down in Decryptor.main > Decryptor$Password#1 > fields > passHash. Keep VisualVM open and go back to the Decryptor.java program. Modify it to this version:
+Go to "File" > "Load" > "heapdump.hprof". Change the view from "Summary" to "Threads". Scroll to the bottom and find the "Decryptor.main" thread. Go down to "Decryptor$Password#1" > "fields" > "passHash". Go back to the "Decryptor.java" program and modify it to this version:
 ```java
 import java.security.MessageDigest;
 import java.util.Arrays;
@@ -32,8 +28,8 @@ public class Decryptor
   }
 }
 ```
-Inside the passHash array, write down the 16 acquired bytes from VisualVM, separating them with commas. Running the program with
+Inside the "passHash" array, type in the 16 bytes from "passHash" in VirtualVM, separating them with commas. Run the command
 ```bash
 java Decryptor.java
 ```
-reveals the flag.
+to get the flag.
