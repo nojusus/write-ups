@@ -1,4 +1,3 @@
-```python
 with open("file.txt", "r") as f:
     read = f.read()
 
@@ -19,4 +18,3 @@ print(f"\nThere are {count} A letters.")
 
 # Reformat the found line into uppercase
 print(f"\n{flagLine.upper()}")
-```
